@@ -3,16 +3,19 @@ import os
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 
-path = '/Users/thomasvaudescal/Documents/Mes_documents/22_VSCODE/Cookie-Clicker-Bot/chromedriver'
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
 
-service = Service(path)
-service.start()
-driver = webdriver.Remote(service.service_url)
-driver.get('https://orteil.dashnet.org/cookieclicker/v10466/')
+driver.maximize_window()
 
-time.sleep(1000)
+driver.get('https://orteil.dashnet.org/cookieclicker/')
 
-driver.find_element_by_id('bigCookie').click()
+time.sleep(3)
+#<div class="langSelectButton title" style="padding:4px;" id="langSelect-FR">Français</div>
+langage_menu = driver.find_element(By.ID, 'langSelect-FR')
+driver.implicitly_wait(10)
+langage_menu.click()
 
-driver.quit()

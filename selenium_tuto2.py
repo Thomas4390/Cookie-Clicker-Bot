@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.keys import Keys

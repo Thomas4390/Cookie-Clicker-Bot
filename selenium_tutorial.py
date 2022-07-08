@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 
-
+#//*[@id = "Col1-1-Financials-Proxy"]/section/div[3]/div[1]/div/div[1]/div/div[1]/span
 def get_driver():
     service = Service(ChromeDriverManager().install())
     chrome_options = Options()
